@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advice generator app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="advice-card">
+        <h2 class="txt-primary-2">
+          ADVICE #<span id="advice-card__id"></span>
+        </h2>
+
+        <blockquote id="advice-card__quote"></blockquote>
+
+        <picture class="advice-card__divider">
+          <source
+            srcset="images/pattern-divider-desktop.svg"
+            media="(min-width: 769px)"
+          />
+          <img src="images/pattern-divider-mobile.svg" alt="" />
+        </picture>
+
+        <button id="dice-btn" class="btn">
+          <img src="images/icon-dice.svg" alt="" />
+        </button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

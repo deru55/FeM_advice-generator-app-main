@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --ff-default: "Manrope", sans-serif;
+
+  --fw-800: 800;
+
+  --clr-primary-1: hsl(193, 38%, 86%);
+  --clr-primary-2: hsl(150, 100%, 66%);
+
+  --hsl-primary-2: 150, 100%, 66%;
+
+  --clr-neutral-1: hsl(217, 19%, 38%);
+  --clr-neutral-2: hsl(217, 19%, 24%);
+  --clr-neutral-3: hsl(218, 23%, 16%);
+}
+
+/* utilities classes */
+.txt-primary-2 {
+  color: var(--clr-primary-2);
+}
+
+body {
+  font-family: var(--ff-default);
+  font-size: 1rem;
+  font-weight: var(--fw-800);
+  text-align: center;
+  line-height: 1.6;
+  color: var(--clr-primary-1);
+  background-color: var(--clr-neutral-3);
+
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.advice-card {
+  margin-inline: 1rem;
+  padding: clamp(2.25rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3rem)
+    clamp(4rem, 4vw, 4.5rem);
+  background-color: var(--clr-neutral-2);
+  border-radius: 0.5rem;
+
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+
+  position: relative;
+}
+
+.advice-card > h2 {
+  font-size: clamp(0.675rem, 2vw, 0.875rem);
+  letter-spacing: 3px;
+}
+
+#advice-card__quote::before {
+  content: open-quote;
+}
+
+#advice-card__quote::after {
+  content: close-quote;
+}
+
+blockquote {
+  quotes: '"“" "”" "‘" "’"';
+}
+
+#advice-card__quote {
+  font-size: clamp(1.3rem, 3.5vw, 1.75rem);
+}
+
+.btn {
+  cursor: pointer;
+  border: 0;
+  padding: 1.25rem;
+  background-color: hsl(var(--hsl-primary-2));
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
+}
+
+.btn:where(:hover, :focus-visible) {
+  box-shadow: 0px 0px 20px 0px hsla(var(--hsl-primary-2), 0.75);
+}
+
+@media screen and (min-width: 769px) {
+  .advice-card {
+    max-width: min-content;
+  }
+
+  .advice-card__divider {
+    min-width: max-content;
+    margin-top: 0.75rem;
+  }
+}
